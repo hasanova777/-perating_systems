@@ -14,7 +14,7 @@ if len(arguments) > 1:
             list_of_pids.append(pid)
             print(f"Parent[{os.getpid()}]: I ran children process with PID {pid}.")
         else:
-            os.execl("./Child.py", "Child.py", str(random.randint(5, 15)))
+            os.execl("./child.py", "child.py", str(random.randint(5, 10)))
     while len(list_of_pids) > 0:
         pid, exit_status = os.wait()
         exit_status = exit_status//256
